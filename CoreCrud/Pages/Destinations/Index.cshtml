@@ -1,0 +1,72 @@
+@page
+@model CoreCrud.Pages.Destinations.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Destination[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Destination[0].CurrentTemp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Destination[0].TypeOfDestination)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Destination[0].AverageRainfall)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Destination[0].IsSafe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Destination[0].DateOfLastRainfall)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Destination[0].Country)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Destination) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CurrentTemp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TypeOfDestination)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AverageRainfall)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsSafe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfLastRainfall)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country.Id)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
