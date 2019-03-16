@@ -1,0 +1,36 @@
+﻿@page
+@model CreateNewMovieModel
+@{
+    ViewData["Title"] = "Create good movies";
+}
+
+<h2>Create movies made by experienced producers and shot at popular locations</h2>
+
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <form method="post" style="margin-top: 50px;">
+            
+            <div class="form-group">
+                <label asp-for="NewMyMovie.ProducerId" class="control-label"></label>
+                <select asp-for="NewMyMovie.ProducerId" class ="form-control" asp-items="ViewBag.ProducerId"></select>
+                <span asp-validation-for="NewMyMovie.ProducerId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NewMyMovie.StudioId" class="control-label"></label>
+                <select asp-for="NewMyMovie.StudioId" class ="form-control" asp-items="ViewBag.StudioId"></select>
+                <span asp-validation-for="NewMyMovie.StudioId" class="text-danger"></span>
+            </div>
+              <div class="form-group">
+                <label asp-for="NewMyMovie.Name" class="control-label"></label>
+                <input asp-for="NewMyMovie.Name" class="form-control" />
+                <span asp-validation-for="NewMyMovie.Name" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group">
+                <input type="submit" value="Create New Movie" class="btn btn-danger" />
+            </div>
+            
+        </form>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+@page
+@model MoviesApp.Pages.GoodMovies.IndexModel
+
+@{
+    ViewData["Title"] = "List of good movies";
+}
+
+<h2>List of good movies</h2>
+
+<p>
+    
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.GoodMovie[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GoodMovie[0].Producer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GoodMovie[0].Studio)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.GoodMovie) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Producer.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Studio.Name)
+            </td>
+            <td>
+                
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

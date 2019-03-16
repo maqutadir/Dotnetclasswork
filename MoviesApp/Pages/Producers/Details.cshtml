@@ -1,0 +1,37 @@
+@page
+@model MoviesApp.Pages.Producers.DetailsModel
+
+@{
+    ViewData["Title"] = "Details of this producer";
+}
+
+<h2>Details of this producer</h2>
+
+<div>
+    <h4>Producer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Producer.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Producer.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Producer.NoOfMoviesProduced)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Producer.NoOfMoviesProduced)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Producer.Isreputed)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Producer.Isreputed)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Producer.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

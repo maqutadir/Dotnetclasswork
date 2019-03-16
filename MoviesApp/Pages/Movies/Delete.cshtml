@@ -1,0 +1,82 @@
+@page
+@model MoviesApp.Pages.Movies.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Movie</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Movie.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Movie.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Movie.Budget)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Movie.Budget)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Movie.BOCollection)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Movie.BOCollection)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Movie.Rating)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Movie.Rating)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Movie.DateofRelease)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Movie.DateofRelease)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Movie.Isrecommended)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Movie.Isrecommended)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Movie.DateLastPlayed)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Movie.DateLastPlayed)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Movie.Producer)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Movie.Producer.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Movie.Studio)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Movie.Studio.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Movie.Album)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Movie.Album.Id)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Movie.Id" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

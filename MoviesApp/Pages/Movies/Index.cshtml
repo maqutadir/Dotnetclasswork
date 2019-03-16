@@ -1,0 +1,90 @@
+@page
+@model MoviesApp.Pages.Movies.IndexModel
+
+@{
+    ViewData["Title"] = "List of movies";
+}
+
+<h2>List of movies</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie[0].Budget)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie[0].BOCollection)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie[0].Rating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie[0].DateofRelease)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie[0].Isrecommended)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie[0].DateLastPlayed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie[0].Producer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie[0].Studio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie[0].Album)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Movie) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Budget)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BOCollection)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateofRelease)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Isrecommended)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateLastPlayed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Producer.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Studio.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Album.Name)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

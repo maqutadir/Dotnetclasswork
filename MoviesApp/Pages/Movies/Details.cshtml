@@ -1,0 +1,79 @@
+@page
+@model MoviesApp.Pages.Movies.DetailsModel
+
+@{
+    ViewData["Title"] = "Details of the movie";
+}
+
+<h2>Details of the movie</h2>
+
+<div>
+    <h4>Movie</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Movie.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Movie.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Movie.Budget)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Movie.Budget)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Movie.BOCollection)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Movie.BOCollection)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Movie.Rating)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Movie.Rating)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Movie.DateofRelease)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Movie.DateofRelease)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Movie.Isrecommended)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Movie.Isrecommended)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Movie.DateLastPlayed)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Movie.DateLastPlayed)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Movie.Producer)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Movie.Producer.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Movie.Studio)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Movie.Studio.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Movie.Album)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Movie.Album.Id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Movie.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

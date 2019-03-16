@@ -1,0 +1,30 @@
+﻿@page
+@model ProducerProfileModel
+@{
+    ViewData["Title"] = "Producer Profile";
+}
+
+<h2>View producer profile</h2>
+<h2 class="text-center text-success">@Model.Producer.Name</h2>
+<div class="row">
+    
+    <div class="col-md-6">
+        <h3>Producer Details</h3>
+        
+        
+    </div>
+    <div class="col-md-6">
+        <h3>Movies</h3>
+        <ul>
+            @foreach(var movie in Model.Producer.Movies) {
+                <li>
+                   Name=@movie.Name
+                   Budget=@movie.Budget
+                   BOCollection=@movie.BOCollection
+                   Rating=@movie.Rating
+                   DateOfRelease=@movie.DateofRelease
+                </li>
+            }
+        </ul>
+    </div>
+</div>

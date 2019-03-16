@@ -1,0 +1,76 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<h1>Amicable Insights</h1>
+
+
+
+<div class="row">
+    <div class="col-md-6">
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th colspan="2">Statistics</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Total No. of Producers</td>
+                    <td class="text-right">@Model.CountOfProducers</td>
+                </tr>
+                <tr>
+                    <td>Total No. of reputed Producers</td>
+                    <td class="text-right">@Model.ReputedProducers</td>
+                </tr>  
+                <tr>
+                    <td>Total No. of Studios</td>
+                    <td class="text-right">@Model.CountOfStudios</td>
+                </tr>  
+                <tr>
+                    <td>Total No. of Albums</td>
+                    <td class="text-right">@Model.CountOfAlbums</td>
+                </tr>  
+                <tr>
+                    <td>Total No. of Movies</td>
+                    <td class="text-right">@Model.CountOfMovies</td>
+                </tr>  
+                <tr>
+                    <td>Total No. of Good Movies</td>
+                    <td class="text-right">@Model.CountOfGoodMovies</td>
+                </tr> 
+            </tbody>
+        </table>
+
+    </div>
+
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Administration</h3>
+            </div>
+            <div class="panel-body">
+                <ul>
+                     <li><a asp-page="Movies/Index">Movies</a></li>
+                     <li><a asp-page="GoodMovies/Index">Good Movies</a></li>
+                    <li><a asp-page="Producers/Index">Producers</a></li>
+                    <li><a asp-page="Studios/Index">Studios</a></li>
+                    <li><a asp-page="Albums/Index">Soundtracks</a></li>
+                </ul>
+                <ul>
+                    <li><a asp-page="ProducerProfile" asp-route-id="2">Producer Profile (ID=2)</a></li>
+                    <li><a asp-page="StudioLookup">Lookup Studios</a></li>
+                    <li><a asp-page="MyMovies" asp-route-id="1">Details of Movie (ID=1)</a></li>
+                </ul>
+                <ul>
+                    <li><a asp-page="SearchMovies">Search Movie</a></li>
+                    <li><a asp-page="StopPlayingMovie" asp-route-id="6">Stop Playing Movie (ID=6)</a></li>
+                    <li><a asp-page="CreateNewMovie">Create New Movie</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
